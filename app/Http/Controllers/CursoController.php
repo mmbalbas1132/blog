@@ -7,17 +7,21 @@ use Illuminate\Http\Request;
 class CursoController extends Controller
 {
     public function index(){
-          return 'Bienvenido a la página principal';
+          return view('cursos.index');
     }
 
     public function create(){
-        return 'En esta pagina podrás crear un curso';
+        return view('cursos.create');
     }
 
     public function show($curso){
-        return" Bienvenido al curso: $curso";
-      echo "hola en este    ";
-        //Ojo!! la comilla simple no procesa variables.
-        
+
+        //compact('curso'); ['curso' => $curso]
+
+        return view('cursos.show', compact('curso'));
+        //return view('cursos.show', ['curso' => $curso]);
+        //return view('cursos.show', array('curso' => $curso);
+        //accedeo al archivo show de cursos y a la variable del archivo ($curso)
+             
     }
 }
