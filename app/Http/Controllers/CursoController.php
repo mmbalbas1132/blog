@@ -16,7 +16,7 @@ class CursoController extends Controller
 
     public function show($curso){
         return" Bienvenido al curso: $curso";
-      
+      echo "hola en este    ";
         //Ojo!! la comilla simple no procesa variables.
         
     }
