@@ -4,6 +4,7 @@ use App\Http\Controllers\CursoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Rutas Web
