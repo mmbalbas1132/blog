@@ -19,14 +19,19 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', HomeController::class);
 
-Route::controller(CursoController::class)->group(function(){
-    Route::get('cursos','index')->name('cursos.index');
-    
-    Route::get('cursos/create','create')->name('cursos.create');
+Route::controller(CursoController::class)->group(function () {
+    Route::get('cursos', 'index')->name('cursos.index');
 
-    Route::get('cursos/{id}','show')->name('cursos.show');
+    Route::get('cursos/create', 'create')->name('cursos.create');
 
+    //Ruta que se encarga de recibir la información desde el formulario por el método post por seguridad
+    Route::post('cursos', [CursoController::class, 'store'])->name('cursos.store');
+
+
+    Route::get('cursos/{curso}', 'show')->name('cursos.show');
+
+    Route::get('cursos/{curso}/edit', [CursoController::class, 'edit'])->name('cursos.edit');
+
+    //Laravel recomienda usar el método put para hacer actualizaciones.
+    Route::put('cursos/{curso}', [CursoController::class, 'update'])->name('cursos.update');
 });
-
-
-
