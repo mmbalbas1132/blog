@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class User extends Authenticatable
 {
@@ -42,4 +43,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    //con este mutador transformo lo introducido a minúsculas
+    protected function name(): Attribute
+    {
+        return new Attribute(
+            //Accesores
+            // get: function ($value) {
+            //     return ucwords($value);
+            // },
+
+            get: fn ($value) => ucwords($value),
+            //Mutadores
+            set: fn ($value) => strtolower($value)
+
+        );
+    }
 }
