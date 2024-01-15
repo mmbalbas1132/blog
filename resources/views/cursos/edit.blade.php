@@ -29,4 +29,5 @@
 
         <input type="submit" value="Actualizar formulario">
     </form>
+    <a href="{{route('cursos.index')}}">Página principal</a>
 @endsection

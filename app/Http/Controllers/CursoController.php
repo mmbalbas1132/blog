@@ -41,7 +41,7 @@ class CursoController extends Controller
         return view('cursos.show', compact('curso'));
         //return view('cursos.show', ['curso' => $curso]);
         //return view('cursos.show', array('curso' => $curso);
-        //accedeo al archivo show de cursos y a la variable del archivo ($curso)
+        //accedo al archivo show de cursos y a la variable del archivo ($curso)
 
     }
 

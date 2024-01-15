@@ -24,7 +24,7 @@ Route::controller(CursoController::class)->group(function () {
 
     Route::get('cursos/create', 'create')->name('cursos.create');
 
-    //Ruta que se encarga de recibir la información desde el formulario por el método post por seguridad
+    //Ruta que se encarga de recibir la información desde el formulario por el método POST por seguridad
     Route::post('cursos', [CursoController::class, 'store'])->name('cursos.store');
 
 

@@ -11,4 +11,5 @@
         <label for="">Categoría: <br> <input type="text" name="categoria"></label><br>
         <input type="submit" value="Enviar formulario">        
     </form>
+    <a href="{{route('cursos.index')}}">Página principal</a>
 @endsection

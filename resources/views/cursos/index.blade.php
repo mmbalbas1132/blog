@@ -6,6 +6,7 @@
 <h1>Bienvenido a la página principal de cursos</h1>
 <a href="{{route('cursos.create')}}">Crear curso</a>
 <ul>
+    
    @foreach ($cursos as $curso)
     <li>
         <a href="{{route('cursos.show', $curso->id)}}">{{$curso->nombre}}</a>
@@ -13,7 +14,7 @@
    @endforeach
 </ul>
 
-{{$cursos->links()}}
+{{$cursos->links()}} 
 @endsection
 
 
