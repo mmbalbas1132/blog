@@ -18,6 +18,7 @@ class CursoFactory extends Factory
     {
         return [
             'nombre' => $this->faker->sentence(), 
+            'slug' => $this->faker->slug(), /*crea los slugs para la base de datos de prueba*/
             'descripcion' => $this->faker->paragraph(), 
             'categoria' => $this->faker->randomElement(['Desarrollo web', 'Diseño web'])
         ];

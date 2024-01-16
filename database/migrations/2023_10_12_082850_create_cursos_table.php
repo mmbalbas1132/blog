@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('cursos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('slug')->unique(); /*Creo este campo para generar la url amigable sin caracteres extraños. Tiene la restriccioón unique porque será el identificador único*/
             $table->text('descripcion');
             $table->text('categoria');
             $table->timestamps();
